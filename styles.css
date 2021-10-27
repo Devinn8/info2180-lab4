@@ -1,0 +1,29 @@
+header{
+    font-size: 24px;
+}
+
+header p{
+  font-size: 24px;
+}
+
+
+.container{
+  display: flex;
+  flex-direction: column;
+}
+
+#search{
+  width: 5%;
+}
+
+/*#search{
+  background-color: red;
+  border-radius: 10%;
+  padding: 5px;
+  width: 5%;
+}
+
+#searchBar{
+  padding: 5px;
+  width: 30%;
+}*/
