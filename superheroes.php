@@ -60,13 +60,41 @@ $superheroes = [
       "name" => "Wanda Maximoff",
       "alias" => "Scarlett Witch",
       "biography" => "Notably powerful, Wanda Maximoff has fought both against and with the Avengers, attempting to hone her abilities and do what she believes is right to help the world.",
-  ], 
+  ],
 ];
+
 
 ?>
 
-<ul>
-<?php foreach ($superheroes as $superhero): ?>
-  <li><?= $superhero['alias']; ?></li>
-<?php endforeach; ?>
-</ul>
+<?php
+
+$query = $_REQUEST['searchBar'];
+$newVal = filter_var($query, FILTER_SANITIZE_STRING);
+$mess = "SUPERHERO NOT FOUND";
+$pos = true;?>
+
+
+
+
+ <?php if($newVal==""):?>
+   <ul>
+     <?php foreach ($superheroes as $superhero): ?>
+       <li><?= $superhero['alias']; ?></li>
+     <?php endforeach; ?>
+   </ul>
+
+ <?php else: ?>
+   <?php foreach($superheroes as $superhero): ?>
+     <?php if($newVal == $superhero['name'] || $newVal == $superhero['alias']): ?>
+       <h3><?php echo $superhero['alias']; ?></h3>
+       <h4><?= $superhero['name']; ?></h4>
+       <p><?= $superhero['biography']; ?></p>
+       <?php break ?>
+
+     <?php endif; ?>
+  <?php endforeach; ?>
+  <?php if ($newVal != $superhero['name'] && $newVal != $superhero['alias']): ?>
+    <h5><?= $mess ?></h5>
+  <?php endif;?>
+
+<?php endif; ?>
