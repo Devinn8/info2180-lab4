@@ -1,8 +1,12 @@
 header{
     font-size: 24px;
+    background-color: blue;
+    color: white;
+    text-align: center;
 }
 
 header p{
+  color: white;
   font-size: 24px;
 }
 
@@ -13,10 +17,6 @@ header p{
 }
 
 #search{
-  width: 5%;
-}
-
-/*#search{
   background-color: red;
   border-radius: 10%;
   padding: 5px;
@@ -26,4 +26,10 @@ header p{
 #searchBar{
   padding: 5px;
   width: 30%;
-}*/
+}
+
+
+h5{
+  color: red;
+  font-size: 24px;
+}
